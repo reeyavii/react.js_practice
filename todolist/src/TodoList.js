@@ -38,9 +38,17 @@ function TodoList() {
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          style={{ backgroundColor: "transparent", border: "1px solid black", }}
+          style={{ backgroundColor: "transparent", border: "1px solid black" }}
         />
-        <button type="submit" style={{ marginLeft: "15px", backgroundColor: "rgba(5, 5, 5, 0.829)", color:"white", fontSize:"11px", }}>
+        <button
+          type="submit"
+          style={{
+            marginLeft: "15px",
+            backgroundColor: "rgba(5, 5, 5, 0.829)",
+            color: "white",
+            fontSize: "11px",
+          }}
+        >
           Add
         </button>
       </form>
@@ -59,17 +67,19 @@ function TodoList() {
               onChange={() => handleCheck(todo.id)}
             />
             {todo.text}
-            <button
-              onClick={() => handleTodoDelete(todo.id)}
-              style={{
-                marginLeft: "80px",
-                color: "red",
-                backgroundColor: "rgba(5, 5, 5, 0.829)",
-                fontSize:"10px",
-              }}
-            >
-              Delete
-            </button>
+            {todo.checked && (
+              <button
+                onClick={() => handleTodoDelete(todo.id)}
+                style={{
+                  marginLeft: "80px",
+                  color: "red",
+                  backgroundColor: "rgba(5, 5, 5, 0.829)",
+                  fontSize: "10px",
+                }}
+              >
+                Delete
+              </button>
+            )}
           </li>
         ))}
       </ul>
