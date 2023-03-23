@@ -34,8 +34,15 @@ function TodoList() {
     <div>
       <h1>To-Do List</h1>
       <form onSubmit={handleFormSubmit}>
-        <input type="text" value={inputValue} onChange={handleInputChange} />
-        <button type="submit">Add</button>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          style={{ backgroundColor: "transparent", border: "1px solid black", }}
+        />
+        <button type="submit" style={{ marginLeft: "15px", backgroundColor: "rgba(5, 5, 5, 0.829)", color:"white", fontSize:"11px", }}>
+          Add
+        </button>
       </form>
       <ul>
         {todos.map((todo) => (
@@ -54,7 +61,12 @@ function TodoList() {
             {todo.text}
             <button
               onClick={() => handleTodoDelete(todo.id)}
-              style={{ marginLeft: "60px" }}
+              style={{
+                marginLeft: "80px",
+                color: "red",
+                backgroundColor: "rgba(5, 5, 5, 0.829)",
+                fontSize:"10px",
+              }}
             >
               Delete
             </button>
