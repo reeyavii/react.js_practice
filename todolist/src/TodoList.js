@@ -38,7 +38,7 @@ function TodoList() {
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          style={{ backgroundColor: "transparent", border: "1px solid black" }}
+          style={{backgroundColor:"rgba(5, 5, 5, 0.829)", border: "1px solid black", color:"white", }}
         />
         <button
           type="submit"
